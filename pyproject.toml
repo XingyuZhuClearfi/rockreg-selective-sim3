@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rockreg-selective-sim3"
+version = "0.1.0"
+description = "Branch-aware selective Sim(3) registration of multi-resolution rock tomograms"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "tifffile>=2023.7.10",
+    "torch>=2.1",
+]
+keywords = [
+    "digital rock",
+    "image registration",
+    "micro-CT",
+    "similarity transform",
+]
+
+[project.scripts]
+rockreg-register = "rockreg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
